@@ -1,4 +1,5 @@
 let connectBtn;
+let port;
 
 function connectArduino(){
   port = createSerial();
@@ -42,6 +43,12 @@ function connectBtnClick() {
   } else {
     port.close();
   }
+}
+
+function sendDataToArduino(message){
+  port.write(String(message));
+  port.write("\n");
+
 }
 
 

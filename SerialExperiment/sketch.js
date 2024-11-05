@@ -1,4 +1,3 @@
-let port;
 let inVal;
 
 function setup() {
