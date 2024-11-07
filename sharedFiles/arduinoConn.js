@@ -1,6 +1,10 @@
 let connectBtn;
 let port;
 let arduinoVals = [];
+let totalSendMotor;
+let presend = 0;
+
+
 
 function connectArduino(){
   port = createSerial();
@@ -32,6 +36,32 @@ function readArduino(){
   }
 }
 
+function readTick(){
+  let inString = port.readUntil("\n").trim();
+  if(inString == "f"){
+    sendDataToArduino(totalSendMotor);
+    totalSendMotor = 0;
+  }
+}
+
+function sendPos(pos){
+  let inString = port.readUntil("\n").trim();
+  if(inString == "f"){
+   
+    sendDataToArduino(pos);
+  }
+}
+
+function calculateMotor(newPos){
+  let diff = newPos-presend;
+  print(diff);
+  presend = newPos;
+  totalSendMotor += diff;
+ 
+}
+
+
+
 function connectBtnClick() {
   if (!port.opened()) {
     port.open('Arduino', 9600);
@@ -45,3 +75,5 @@ function sendDataToArduino(message){
   port.write("\n");
 
 }
+
+
