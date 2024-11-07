@@ -1,4 +1,4 @@
-let inVal;
+
 
 function setup() {
   createCanvas(400, 400);
@@ -8,6 +8,6 @@ function setup() {
 
 function draw() {
   background(255);
-  inVal = readArduinoVal();
-  circle(width/2, height/2, inVal);
+  readArduino();
+  circle(width/2, height/2, arduinoVals[0]);
 }
