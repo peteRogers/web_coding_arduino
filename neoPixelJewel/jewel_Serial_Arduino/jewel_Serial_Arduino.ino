@@ -1,12 +1,13 @@
 #include <Adafruit_NeoPixel.h>
-#define PIN 6
+
 
 int red = 0;
 int green = 0;
 int blue = 0;
 int white = 0;
 
-Adafruit_NeoPixel jewel = Adafruit_NeoPixel(7, PIN, NEO_GRBW + NEO_KHZ800);
+//data on pin 8
+Adafruit_NeoPixel jewel = Adafruit_NeoPixel(7, 8, NEO_GRBW + NEO_KHZ800);
 
 void setup() {
   Serial.begin(9600);

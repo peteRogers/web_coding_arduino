@@ -1,7 +1,7 @@
 #include <Adafruit_NeoPixel.h>
 
-#define PIN 6
-Adafruit_NeoPixel jewel = Adafruit_NeoPixel(7, PIN, NEO_GRBW + NEO_KHZ800);
+//data on pin 8
+Adafruit_NeoPixel jewel = Adafruit_NeoPixel(7, 8, NEO_GRBW + NEO_KHZ800);
 
 void setup() {
   jewel.begin();
