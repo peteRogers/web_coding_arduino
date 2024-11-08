@@ -51,11 +51,12 @@ function readTick(){
 }
 
 function sendPos(pos){
-  let inString = port.readUntil("\n").trim();
-  if(inString == "f"){
+  // let inString = port.readUntil("\n").trim();
+  // if(inString == "f"){
    
-    sendDataToArduino(pos);
-  }
+   
+  // }
+  sendDataToArduino(pos);
 }
 
 function calculateMotor(newPos){

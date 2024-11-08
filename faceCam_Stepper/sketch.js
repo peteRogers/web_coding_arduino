@@ -26,10 +26,12 @@ function draw() {
     circle(fx, height/2, 20, 20);
    // let facePos = round(map(fx, 0, 640, 1365, 0));
     //facePos = constrain(facePos, 0, 1365);
-    let out = round(width/2 -fx)
-    print(out);
+    
+    out = map(fx, 0, 640, 0, 4095);
+    out = round(constrain(out, 0, 4095));
+    textSize(30);
     text(out, 100, 100);
-   // sendPos(round(fx*3));
+    sendPos(out);
      // print(facePos);
   }
 }
