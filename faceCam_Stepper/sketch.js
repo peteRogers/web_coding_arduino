@@ -28,7 +28,8 @@ function draw() {
     //facePos = constrain(facePos, 0, 1365);
     let out = round(width/2 -fx)
     print(out);
-    sendPos(round(fx*3));
+    text(out, 100, 100);
+   // sendPos(round(fx*3));
      // print(facePos);
   }
 }

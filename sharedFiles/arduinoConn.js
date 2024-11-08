@@ -27,6 +27,12 @@ function parseStringToIntArray(str) {
     .map(num => parseInt(num, 10)); // Convert each string to an integer
 }
 
+function sendColor(coll){
+  let sender = ""+round(red(coll))+">"+round(green(coll))+">"+round(blue(coll))+"";
+  print(sender);
+  sendDataToArduino(sender);
+}
+
 function readArduino(){
   let inString = port.readUntil("\n");
   //port.clear(); not necessary on uno
