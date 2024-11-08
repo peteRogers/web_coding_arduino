@@ -15,10 +15,6 @@ void setup() {
 }
 
 void loop() {
-  
-}
-
-void serialEvent() {
   if(Serial.available()){
       String input = Serial.readStringUntil('\n');
       red = getValue(input, '>', 0).toInt();
@@ -30,6 +26,8 @@ void serialEvent() {
       }
   }
 }
+
+
 
 String getValue(String data, char separator, int index){
     int found = 0;
