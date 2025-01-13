@@ -64,7 +64,18 @@ function calculateMotor(newPos){
   print(diff);
   presend = newPos;
   totalSendMotor += diff;
+  
  
+}
+
+function showPortStatus(){
+  if(port.opened()){
+    textSize(8);
+    text("port connected", 10,10);
+  }else{
+    textSize(8);
+    text("port closed", 10,10);
+  }
 }
 
 
