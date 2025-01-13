@@ -11,9 +11,7 @@ function setup() {
   video = createCapture(VIDEO);
   video.size(640, 480);
   video.hide();
-  
   faceMesh.detectStart(video, gotFaces);
-  
   connectArduino();
 }
 
@@ -24,9 +22,6 @@ function draw() {
   if(faces.length > 0){
     let fx = faces[0].box.xMin+(faces[0].box.width/2)
     circle(fx, height/2, 20, 20);
-   // let facePos = round(map(fx, 0, 640, 1365, 0));
-    //facePos = constrain(facePos, 0, 1365);
-    
     out = map(fx, 0, 640, 0, 4095);
     out = round(constrain(out, 0, 4095));
     textSize(30);
